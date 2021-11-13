@@ -8,6 +8,8 @@ class Cell:
 
     def update_state(self, neighbours):
         self.is_living = False
+        if neighbours == 2:
+            self.is_living = True
 
 
 # Press the green button in the gutter to run the script.

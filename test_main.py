@@ -11,6 +11,21 @@ class MyTestCase(unittest.TestCase):
         cell.update_state(neighbours=0)
         self.assertFalse(cell.is_living)
 
+    def test_if_cell_has_1_neighbouts_should_die(self):
+        cell = Cell(is_living=True)
+        cell.update_state(neighbours=1)
+        self.assertFalse(cell.is_living)
+
+    def test_if_cell_has_2_neighbouts_should_survive(self):
+        cell = Cell(is_living=True)
+        cell.update_state(neighbours=2)
+        self.assertTrue(cell.is_living)
+    
+    def test_if_cell_has_3_neighbouts_should_survive(self):
+        cell = Cell(is_living=True)
+        cell.update_state(neighbours=3)
+        self.assertTrue(cell.is_living)
+
 
 if __name__ == '__main__':
     unittest.main()
